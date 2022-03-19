@@ -1,1 +1,197 @@
-Hello World!
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Learning noise-independent speech representations for high-quality voice conversion for noisy target speakers</title>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Audio samples of "Learning noise-independent speech representations for high-quality voice conversion for noisy target speakers"</h1>
+      </header>
+    </article>
+
+
+    <div><b>Authors: </b> Liumeng Xue, Shan Yang, Na Hu, Dan Su, Lei Xie </div> <br>
+    <div><b>Abstract:</b> Voice conversion is a technique that transforms the speech signal of a source speaker to a sound like that of a target speaker without changing linguistic content. Based on the clean data, Voice conversion has made great progress in terms of speech quality and speaker similarity. However, many acoustic environments are noisy and reverberant in real applications, severely degrading the performance and restricting the applicability of the VC methods. To address this limitation, we introduce FlowVC, a new high-quality VC framework for noisy target speakers. Our model is composed of a noise-controllable WaveGAN and a flow-based conversion model. The noise-controllable WaveGAN which is a GAN-base VAE with FiLM is proposed to learn noise-independent latent speech representations from waveform via the encoder, and reconstruct the clean waveform via the decoder and the FiLM layer. The flow-based conversion model is used to directly model the distribution of the speech representations from phoneme posteriorgram (PPG). Objective and subjective experimental results demonstrate that FlowVC achieves high speech quality and speaker similarity for the noisy target speakers.
+ </div>
+	
+    <h4>一. Noise target speakers from the VCTK-noise corpus</h4>
+
+
+ 
+ 
+    <div>
+      <span class="transcript">1.1 He seems to have everything.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/vctk/0000000003.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/vctk/0000000003.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Topline</td><td><audio controls><source src="samples/topline/vctk/0000000003.wav"></audio></td>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/vctk/0000000003.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/vctk/0000000003.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>
+   
+    
+    <div>
+      <span class="transcript">1.2 He seems to have everything.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/vctk/0000000006.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/vctk/0000000006.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Topline</td><td><audio controls><source src="samples/topline/vctk/0000000006.wav"></audio></td>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/vctk/0000000006.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/vctk/0000000006.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>
+   
+    
+    
+    <div>
+      <span class="transcript">1.3 He took me on a tour of the wards.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/vctk/0000000008.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/vctk/0000000008.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Topline</td><td><audio controls><source src="samples/topline/vctk/0000000008.wav"></audio></td>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/vctk/0000000008.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/vctk/0000000008.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>
+ 
+     <div>
+      <span class="transcript">1.4 We also need a small plastic snake and a big toy frog for the kids.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/vctk/0000000015.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/vctk/0000000015.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Topline</td><td><audio controls><source src="samples/topline/vctk/0000000015.wav"></audio></td>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/vctk/0000000015.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/vctk/0000000015.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>
+ 
+    <div>
+      <span class="transcript">1.5 But it may take some time to confirm the findings. </span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/vctk/0000000016.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/vctk/0000000016.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Topline</td><td><audio controls><source src="samples/topline/vctk/0000000016.wav"></audio></td>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/vctk/0000000016.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/vctk/0000000016.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>   
+	
+    <h4>二. A noise target speaker from the Real-noisy corpus</h4>
+
+    
+    <div>
+      <span class="transcript">1.1 This represents a tough game for us.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000003.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000003.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000003.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000003.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>
+
+    <div>
+      <span class="transcript">1.2 Scotland had great assets.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000005.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000005.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000005.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000005.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>  
+    
+    <div>
+      <span class="transcript">1.3 I'd just like to play.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000010.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000010.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000010.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000010.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>  
+	
+	
+	     <div>
+      <span class="transcript">1.4 To the Hebrews it was a token that there would be no more universal floods.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000012.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000012.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000012.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000012.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>  
+ 
+ 
+     <div>
+      <span class="transcript">1.5 Overall it has been deeply frustrating and disappointing.</span>
+      <table>
+        <tr>
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000014.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000014.wav"></audio></td>		
+		</tr>
+        <tr>
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000014.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000014.wav"></audio></td>		
+		</tr>
+
+      </table>
+    </div>
+ <br>  
+ 
+  </body>
+</html>
