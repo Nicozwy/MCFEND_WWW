@@ -1,19 +1,19 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Learning noise-independent speech representations for high-quality voice conversion for noisy target speakers</title>
+    <title>Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</title>
   </head>
   <body>
     <article>
       <header>
-        <h1>Audio samples of "Learning noise-independent speech representations for high-quality voice conversion for noisy target speakers"</h1>
+        <h1>Audio samples of "Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers"</h1>
       </header>
     </article>
 
 
     <div><b>Authors: </b> Liumeng Xue, Shan Yang, Na Hu, Dan Su, Lei Xie </div> <br>
-    <div><b>Abstract:</b> Voice conversion is a technique that transforms the speech signal of a source speaker to a sound like that of a target speaker without changing linguistic content. Based on the clean data, Voice conversion has made great progress in terms of speech quality and speaker similarity. However, many acoustic environments are noisy and reverberant in real applications, severely degrading the performance and restricting the applicability of the VC methods. To address this limitation, we introduce FlowVC, a new high-quality VC framework for noisy target speakers. Our model is composed of a noise-controllable WaveGAN and a flow-based conversion model. The noise-controllable WaveGAN which is a GAN-base VAE with FiLM is proposed to learn noise-independent latent speech representations from waveform via the encoder, and reconstruct the clean waveform via the decoder and the FiLM layer. The flow-based conversion model is used to directly model the distribution of the speech representations from phoneme posteriorgram (PPG). Objective and subjective experimental results demonstrate that FlowVC achieves high speech quality and speaker similarity for the noisy target speakers.
- </div>
+    <div><b>Abstract:</b> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise-control in the hidden space through a FiLM module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
+  </div>
 	
     <h4>一. Noise target speakers from the VCTK-noise corpus</h4>
 
@@ -128,15 +128,15 @@
  <br>
 
     <div>
-      <span class="transcript">1.2 Scotland had great assets.</span>
+      <span class="transcript">1.2 Painful, but only because it's true.</span>
       <table>
         <tr>
-			<td>Source </td><td><audio controls><source src="samples/source/real/0000000005.wav"></audio></td>
-			<td>Target </td><td><audio controls><source src="samples/target/real/0000000005.wav"></audio></td>		
+			<td>Source </td><td><audio controls><source src="samples/source/real/0000000008.wav"></audio></td>
+			<td>Target </td><td><audio controls><source src="samples/target/real/0000000008.wav"></audio></td>		
 		</tr>
         <tr>
-			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000005.wav"></audio></td>
-			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000005.wav"></audio></td>		
+			<td>Baseline</td><td><audio controls><source src="samples/baseline/real/0000000008.wav"></audio></td>
+			<td>FlowVC</td><td><audio controls><source src="samples/denoisedVC/real/0000000008.wav"></audio></td>		
 		</tr>
 
       </table>
