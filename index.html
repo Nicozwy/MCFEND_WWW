@@ -2,6 +2,32 @@
   <head>
     <meta charset="UTF-8">
     <title>Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</title>
+	  <style>
+body {
+  margin:0;
+  padding:10px 30px;
+  background: #fff;
+  color: #111;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  overflow: scroll
+  -webkit-font-smoothing: antialiased;
+}
+audio {
+  width: 250px;
+  margin-right: 10px;
+}
+.sample {
+  font-size: 0.9em;
+  font-style: italic;
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+</style>
+
   </head>
   <body>
     <article>
@@ -12,14 +38,18 @@
 
 
     <div><b>Authors: </b> Liumeng Xue, Shan Yang, Na Hu, Dan Su, Lei Xie </div> <br>
-    <div><b>Abstract:</b> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise control in the hidden space through a FiLM module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
+    <div><b>Abstract:</b> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise-control in the hidden space through a FiLM module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
   </div>
-	
-    <h4>一. Noise target speakers from the VCTK-noise corpus</h4>
+  <hr>
+  <h3>Model Description</h3>
+<p><strong>Topline:</strong> Auto-regressive conversion model + HiFi-GAN vocoder  (using target speakers' <b> clean</b> training data) </p>
+<p><strong>Baseline:</strong> Auto-regressive conversion model + HiFi-GAN vocoder (using target speakers' <b> denoised</b> training data) </p>
+<p><strong>FlowVC:</strong> Flow-based conversion model + noise-controllable WaveGAN  (using target speakers' <b> noisy</b> training data) </p>
 
+<hr>
 
- 
- 
+    <h4> <h3>一. Noise target speakers from VCTK-noise corpus </h3></h4>
+
     <div>
       <span class="transcript">1.1 He seems to have everything.</span>
       <table>
@@ -108,7 +138,9 @@
     </div>
  <br>   
 	
-    <h4>二. A noise target speaker from the Real-noisy corpus</h4>
+	<hr>
+	
+    <h4><h3> 二. The noise target speaker from Real-noisy corpus </h3></h4>
 
     
     <div>
