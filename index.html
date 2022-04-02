@@ -41,9 +41,9 @@
 <ol>
   <li><a href="#abstract">Abstract</a></li>
   <li><a href="#models">Models description</a></li>
-  <li><a href="#trainingset">Samples of noisy target speakers' training set</a></li>
+  <li><a href="#trainingset">Samples of noisy target speakers from the TTS training set</a></li>
   <li><a href="#vctk_noise">Samples of noisy target speakers from VCTK-noise</a></li>
-  <li><a href="#real_noise">Samples of the noisy target speaker from Real-noise</a></li>
+  <li><a href="#real_noise">Samples of the noisy target speaker from Real-noise (a noisy speaker from the Internet)</a></li>
   <li><a href="#summary">Summary</a></li>
   <li><a href="#refs">References</a></li>
 </ol>
@@ -60,15 +60,15 @@
 <p><strong>Baseline:</strong> Auto-regressive conversion model + HiFi-GAN vocoder (using target speakers' <b> denoised</b> training data) </p>
 <p><strong>Proposed:</strong> Flow-based conversion model + noise-controllable WaveGAN  (using target speakers' <b> noisy</b> training data) </p>
 
-<h2> 3. Samples of noisy target speakers' training set<a name="trainingset"></a></h2>
+<h2> 3. Samples of noisy target speakers from the TTS training set<a name="trainingset"></a></h2>
 
 <table>
       <thead>
         <tr>
           <th style="text-align: center"  ><strong>Dataset</strong></th>
-          <th style="text-align: center"  ><strong>Topline (Clean)</strong></th>
-          <td style="text-align: center"><strong>Baseline (Denoised)</strong></th>
-          <td style="text-align: center"><strong>Proposed (Noisy)</strong></th>
+          <th style="text-align: center"  ><strong>Clean speech for Topline </strong></th>
+          <td style="text-align: center"><strong>Denoised speech for Baseline</strong></th>
+          <td style="text-align: center"><strong>Noisy speech for Proposed</strong></th>
           <!-- <td style="text-align: center"><strong>Sample3</strong></th> -->
           <!-- <th style="text-align: center" colspan=3><strong>VCTK</strong></th>
           <th style="text-align: center" colspan=3><strong>Real</strong></th> -->
@@ -212,7 +212,7 @@
 
 <!-- <p><b>Short summary:</b> When the target neutral speaker is male, the FS2-baseline and FS2-denoisedVC cannot produce correct timbre, although the genereted speech is emotional. Besides, FS2-BN sometimes also cannot generate male voice. The proposed model could successfully maintain the target timbre when generating emotional speech.</p> -->
 
-<h2>4. Samples of the noisy target speaker from Real-noise<a name="real_noise"></a></h2>
+<h2>4. Samples of the noisy target speaker from Real-noise (a noisy speaker from the Internet)<a name="real_noise"></a></h2>
 <!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
 <table>
   <thead>
