@@ -50,7 +50,7 @@
 
 <br>
 <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN<a href="#target">[1]</a> and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise control in the hidden space through a FiLM module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
+<p> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN<a href="#ref1">[1]</a> and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise control in the hidden space through a FiLM<a href="#ref2">[2]</a> module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
  </p>
 	<center><img src='fig/model.png'></center>
 <br><br>
@@ -286,11 +286,13 @@
  </p>
 
 
- <h2 id="refs">7. References<a name="refs"></a></h2>
-
-<a name="target"></a>
+<h2 id="refs">7. References<a name="refs"></a></h2>
+<a name="ref1"></a>
   <a href="https://arxiv.org/abs/2106.10831">[1] Cong, Jian, Shan Yang, Lei Xie and Dan Su. “Glow-WaveGAN: Learning Speech Representations from GAN-based Variational Auto-Encoder For High Fidelity Flow-based Speech Synthesis.” Interspeech (2021).
   </a>
+<a name="ref2"></a>
+  <a href="https://arxiv.org/abs/2106.10831">[2] E. Perez, F. Strub, H. De Vries, V. Dumoulin, and A. Courville, “FiLM: Visual reasoning with a general conditioning layer,” in AAAI, vol. 32, no. 1, 2018
+</a>
 
   <br>
   <hr>
