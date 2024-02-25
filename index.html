@@ -12,11 +12,12 @@
         <h2 class="project-name">MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection</h2>
         <br>
         <h2 class="project-tagline">
-            <center> Yupeng Li<sup>1</sup>,, Haorui He<sup>1,2</sup>, Jin Bai<sup>3</sup>, Dacheng Wen<sup>1,4</sup> </center>
-	<center> <sup>1</sup>Hong Kong Baptist University, Hong Kong, China </center>
-	<center> <sup>2</sup>The Chinese University of Hong Kong-Shenzhen, Shenzhen, China </center> 
-	<center> <sup>3</sup>Beijing Normal University-Hong Kong Baptist University United International College </center>
-	<center> <sup>4</sup>The University of Hong Kong</center> -->
+            <center> Yupeng Li<sup>1</sup>, Haorui He<sup>1,2*</sup>, Jin Bai<sup>3</sup>, Dacheng Wen<sup>1,4</sup> </center>
+    <center> <sup>1</sup>Hong Kong Baptist University, Hong Kong, China </center>
+    <center> <sup>2</sup>The Chinese University of Hong Kong-Shenzhen, Shenzhen, China </center> 
+    <center> <sup>3</sup>Beijing Normal University-Hong Kong Baptist University United International College </center>
+    <center> <sup>4</sup>The University of Hong Kong</center>
+    <center> <sup>*</sup>Corresponding Author</center>
         </h2>
     </section>
 
@@ -31,7 +32,7 @@
 
         <br>
         <h2 id="abstract">1. Abstract</h2>
-        <p>The prevalence of fake news across various online sources has had a significant influence on the public. Existing Chinese fake news detection datasets are limited to news sourced solely from Weibo. However, fake news originating from multiple sources exhibits diversity in various aspects, including its content and social context. Methods trained on purely one single news source can hardly be applicable to real-world scenarios. Our pilot experiment demonstrates that the F1 score of the state-of-the-art method that learns from a large Chinese fake news detection dataset, Weibo-21, drops significantly from 0.943 to 0.470 when the test data is changed to multi-source news data, failing to identify more than one-third of the multi-source fake news. To address this limitation, we constructed the first multi-source benchmark dataset for Chinese fake news detection, termed MCFEND, which is composed of news we collected from diverse sources such as social platforms, messaging apps, and traditional online news outlets. Notably, such news has been fact-checked by 14 authoritative fact-checking agencies worldwide. In addition, various existing Chinese fake news detection methods are thoroughly evaluated on our proposed dataset in cross-source, multi-source, and unseen source ways. MCFEND, as a benchmark dataset, aims to advance Chinese fake news detection approaches in real-world scenarios. </p>
+        <p>The prevalence of fake news across various online sources has had a significant influence on the public. Existing Chinese fake news detection datasets are limited to news sourced solely from Weibo. However, fake news originating from multiple sources exhibits diversity in various aspects, including its content and social context. Methods trained on purely one single news source can hardly be applicable to real-world scenarios. Our pilot experiment demonstrates that the F1 score of the state-of-the-art method that learns from a large Chinese fake news detection dataset, Weibo-21, drops significantly from 0.943 to 0.470 when the test data is changed to multi-source news data, failing to identify more than one-third of the multi-source fake news. To address this limitation, we constructed the first multi-source benchmark dataset for Chinese fake news detection, termed MCFEND, which is composed of news we collected from diverse sources such as social platforms, messaging apps, and traditional online news outlets. Notably, such news has been fact-checked by 14 authoritative fact-checking agencies worldwide. In addition, various existing Chinese fake news detection methods are thoroughly evaluated on our proposed dataset in cross-source, multi-source, and unseen source ways. MCFEND, as a benchmark dataset, aims to advance Chinese fake news detection approaches in real-world scenarios. </p>
         <br><br>
 
         <h2 id="dataset-download">2. Dataset Download</h2>
@@ -39,65 +40,67 @@
         <br>
 
         <h2 id="dataset-table">3. Dataset Statistics</h2>
-        <table border="1">
-            <caption>Statistics of the MCFEND dataset.</caption>
-            <tr>
-                <th>Statistics</th>
-                <th>Group 1</th>
-                <th>Group 2</th>
-                <th>Group 3</th>
-                <th>Overall</th>
-            </tr>
-            <tr>
-                <td>#Total</td>
-                <td>8,144</td>
-                <td>6,702</td>
-                <td>9,128</td>
-                <td>23,974</td>
-            </tr>
-            <tr>
-                <td>#Fake</td>
-                <td>7,486</td>
-                <td>5,741</td>
-                <td>4,488</td>
-                <td>17,715</td>
-            </tr>
-            <tr>
-                <td>#Real</td>
-                <td>658</td>
-                <td>961</td>
-                <td>4,640</td>
-                <td>6,259</td>
-            </tr>
-            <tr>
-                <td>#User</td>
-                <td>235,215</td>
-                <td>156,862</td>
-                <td>458,800</td>
-                <td>803,779</td>
-            </tr>
-            <tr>
-                <td>#Posts</td>
-                <td>58,299</td>
-                <td>41,600</td>
-                <td>70,814</td>
-                <td>170,713</td>
-            </tr>
-            <tr>
-                <td>#Comments</td>
-                <td>262,342</td>
-                <td>328,465</td>
-                <td>1,512,095</td>
-                <td>2,102,902</td>
-            </tr>
-            <tr>
-                <td>Timeframe</td>
-                <td>Mar. 2015 - Mar. 2023</td>
-                <td>Jan. 2015 - Mar. 2023</td>
-                <td>Dec. 2014 - Mar. 2023</td>
-                <td>Jan. 2015 - Mar. 2023</td>
-            </tr>
-        </table>
+        <div style="display: flex; justify-content: center;">
+            <table border="1">
+                <caption>Statistics of the MCFEND dataset.</caption>
+                <tr>
+                    <th>Statistics</th>
+                    <th>Group 1</th>
+                    <th>Group 2</th>
+                    <th>Group 3</th>
+                    <th>Overall</th>
+                </tr>
+                <tr>
+                    <td>#Total</td>
+                    <td>8,144</td>
+                    <td>6,702</td>
+                    <td>9,128</td>
+                    <td>23,974</td>
+                </tr>
+                <tr>
+                    <td>#Fake</td>
+                    <td>7,486</td>
+                    <td>5,741</td>
+                    <td>4,488</td>
+                    <td>17,715</td>
+                </tr>
+                <tr>
+                    <td>#Real</td>
+                    <td>658</td>
+                    <td>961</td>
+                    <td>4,640</td>
+                    <td>6,259</td>
+                </tr>
+                <tr>
+                    <td>#User</td>
+                    <td>235,215</td>
+                    <td>156,862</td>
+                    <td>458,800</td>
+                    <td>803,779</td>
+                </tr>
+                <tr>
+                    <td>#Posts</td>
+                    <td>58,299</td>
+                    <td>41,600</td>
+                    <td>70,814</td>
+                    <td>170,713</td>
+                </tr>
+                <tr>
+                    <td>#Comments</td>
+                    <td>262,342</td>
+                    <td>328,465</td>
+                    <td>1,512,095</td>
+                    <td>2,102,902</td>
+                </tr>
+                <tr>
+                    <td>Timeframe</td>
+                    <td>Mar. 2015 - Mar. 2023</td>
+                    <td>Jan. 2015 - Mar. 2023</td>
+                    <td>Dec. 2014 - Mar. 2023</td>
+                    <td>Jan. 2015 - Mar. 2023</td>
+                </tr>
+            </table>
+        </div>
         <br><br>
 
         <h2 id="refs">4. Citation</h2>
