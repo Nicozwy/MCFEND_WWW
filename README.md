@@ -1,3 +1,3 @@
-## Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers
+## MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection
 
-Audio samples for "Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers"
+MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection
