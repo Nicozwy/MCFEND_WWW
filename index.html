@@ -1,305 +1,116 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)https://leiyi420.github.io/HierarchicalEmoTTS/ -->
-<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-
-<!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</title>
-<meta name="generator" content="Jekyll v3.9.0">
-<meta property="og:title" content="TODO: title">
-<meta property="og:locale" content="en_US">
-<link rel="canonical" href="https://leiyi420.github.io/CSEmoTransfer">
-<meta property="og:url" content="https://leiyi420.github.io/CSEmoTransfer">
-<meta name="twitter:card" content="summary">
-<!-- End Jekyll SEO tag -->
-
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+</head>
+<body>
     <section class="page-header">
-    <!-- <h1 class="project-name">Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</h1> -->
-    <h2 class="project-name">Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</h2>
-    <br>
-    <h2 class="project-tagline">
-      <center> Liumeng Xue<sup>1</sup>, Shan Yang<sup>2</sup>, Na Hu<sup>2</sup>, Dan Su<sup>2</sup>, Lei Xie<sup>1</sup>  </center>
-      <br>
-      <center> <sup>1</sup>Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University, Xi’an, China </center>
-      <center> <sup>2</sup>Tencent AI Lab, China </center>
-    </h2>
+        <h2 class="project-name">MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection</h2>
+        <br>
+        <h2 class="project-tagline">
+            <center> Yupeng Li<sup>1</sup>,, Haorui He<sup>1,2</sup>, Jin Bai<sup>3</sup>, Dacheng Wen<sup>1,4</sup> </center>
+	<center> <sup>1</sup>Hong Kong Baptist University, Hong Kong, China </center>
+	<center> <sup>2</sup>The Chinese University of Hong Kong-Shenzhen, Shenzhen, China </center> 
+	<center> <sup>3</sup>Beijing Normal University-Hong Kong Baptist University United International College </center>
+	<center> <sup>4</sup>The University of Hong Kong</center> -->
+        </h2>
     </section>
 
-<section class="main-content">
-      <!-- <h2 id=""><center>Learning Noise-independent Speech Representation for High-quality Voice Conversion for Noisy Target Speakers</center></h2>
+    <section class="main-content">
+        <h2>0. Contents</h2>
+        <ol>
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#dataset-download">Dataset Download</a></li>
+            <li><a href="#dataset-table">Dataset Statistics</a></li>
+            <li><a href="#refs">Citations</a></li>
+        </ol>
 
-<center> Liumeng Xue<sup>1</sup>, Shan Yang<sup>2</sup>, Na Hu<sup>2</sup>, Dan Su<sup>2</sup>, Lei Xie<sup>1</sup>  </center>
-<center> <sup>1</sup>Northwestern Polytechnical University </center>
-<center> <sup>2</sup>Tencent AI Lab </center> -->
+        <br>
+        <h2 id="abstract">1. Abstract</h2>
+        <p>[Abstract content here]</p>
+        <br><br>
 
-<h2>0. Contents</h2>
-<ol>
-  <li><a href="#abstract">Abstract</a></li>
-  <li><a href="#models">Models description</a></li>
-  <li><a href="#trainingset">Samples of noisy target speakers from the TTS training set</a></li>
-  <li><a href="#vctk_noise">Samples of noisy target speakers from VCTK-noise</a></li>
-  <li><a href="#real_noise">Samples of the noisy target speaker from Real-noise (a noisy speaker from the Internet)</a></li>
-  <li><a href="#summary">Summary</a></li>
-  <li><a href="#refs">References</a></li>
-</ol>
+        <h2 id="dataset-download">2. Dataset Download</h2>
+        <p><a href="https://drive.google.com/drive/folders/1tflhQTkMT_gTTwEw3ESfKS7Sr5w__5u5?usp=sharing" class="button">Download Dataset</a></p>
+        <br>
 
-<br>
-<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
-<p> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN<a href="#ref1">[1]</a> and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise control in the hidden space through a FiLM<a href="#ref2">[2]</a> module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
- </p>
-	<center><img src='fig/model.png'></center>
-<br><br>
+        <h2 id="dataset-table">3. Dataset Statistics</h2>
+        <table border="1">
+            <caption>Statistics of the MCFEND dataset.</caption>
+            <tr>
+                <th>Statistics</th>
+                <th>Group 1</th>
+                <th>Group 2</th>
+                <th>Group 3</th>
+                <th>Overall</th>
+            </tr>
+            <tr>
+                <td>#Total</td>
+                <td>8,144</td>
+                <td>6,702</td>
+                <td>9,128</td>
+                <td>23,974</td>
+            </tr>
+            <tr>
+                <td>#Fake</td>
+                <td>7,486</td>
+                <td>5,741</td>
+                <td>4,488</td>
+                <td>17,715</td>
+            </tr>
+            <tr>
+                <td>#Real</td>
+                <td>658</td>
+                <td>961</td>
+                <td>4,640</td>
+                <td>6,259</td>
+            </tr>
+            <tr>
+                <td>#User</td>
+                <td>235,215</td>
+                <td>156,862</td>
+                <td>458,800</td>
+                <td>803,779</td>
+            </tr>
+            <tr>
+                <td>#Posts</td>
+                <td>58,299</td>
+                <td>41,600</td>
+                <td>70,814</td>
+                <td>170,713</td>
+            </tr>
+            <tr>
+                <td>#Comments</td>
+                <td>262,342</td>
+                <td>328,465</td>
+                <td>1,512,095</td>
+                <td>2,102,902</td>
+            </tr>
+            <tr>
+                <td>Timeframe</td>
+                <td>Mar. 2015 - Mar. 2023</td>
+                <td>Jan. 2015 - Mar. 2023</td>
+                <td>Dec. 2014 - Mar. 2023</td>
+                <td>Jan. 2015 - Mar. 2023</td>
+            </tr>
+        </table>
+        <br><br>
 
-<h2> 2. Models description<a name="models"></a></h2>
-<p><strong>Topline:</strong> Auto-regressive conversion model + HiFi-GAN vocoder  (using target speakers' <b> clean</b> training data) </p>
-<p><strong>Baseline:</strong> Auto-regressive conversion model + HiFi-GAN vocoder (using target speakers' <b> denoised</b> training data) </p>
-<p><strong>Proposed:</strong> Flow-based conversion model + noise-controllable WaveGAN  (using target speakers' <b> noisy</b> training data) </p>
-
-<h2> 3. Samples of noisy target speakers from the TTS training set<a name="trainingset"></a></h2>
-
-<table>
-      <thead>
-        <tr>
-          <th style="text-align: center"  ><strong>Dataset</strong></th>
-          <th style="text-align: center"  ><strong>Clean speech for Topline </strong></th>
-          <td style="text-align: center"><strong>Denoised speech for Baseline</strong></th>
-          <td style="text-align: center"><strong>Noisy speech for Proposed</strong></th>
-          <!-- <td style="text-align: center"><strong>Sample3</strong></th> -->
-          <!-- <th style="text-align: center" colspan=3><strong>VCTK</strong></th>
-          <th style="text-align: center" colspan=3><strong>Real</strong></th> -->
-        </tr>
-      </thead>
-      <tbody>
-        
-      <!-- <tr>
-            <td style="text-align: center"><strong>Model</strong></th>
-            <td style="text-align: center"><strong>Training set</strong></th>
-            <td style="text-align: center"><strong>Sample1</strong></th>
-            <td style="text-align: center"><strong>Sample2</strong></th>
-            <td style="text-align: center"><strong>Sample3</strong></th>
-            <td style="text-align: center"><strong>Sample1</strong></th>
-            <td style="text-align: center"><strong>Sample2</strong></th>
-            <td style="text-align: center"><strong>Sample3</strong></th>
-      </tr>                   -->
-      <tr>
-          <td style="text-align: left" rowspan=4>VCTK-noise</td>
-      </tr>  
-
-      <tr>    
-          <td style="text-align: left"><audio src="samples/trainingset/clean/p227_068.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/denoised/p227_068_n.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/noisy/p227_068_n.wav" controls="" preload=""></audio></td>
-      </tr>   
-
-      <tr>    
-          <td style="text-align: left"><audio src="samples/trainingset/clean/p250_064.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/denoised/p250_064_n.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/noisy/p250_064_n.wav" controls="" preload=""></audio></td>
-      </tr>    
-
-      <tr>    
-            <td style="text-align: left"><audio src="samples/trainingset/clean/p374_004.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/trainingset/denoised/p374_004_n.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/trainingset/noisy/p374_004_n.wav" controls="" preload=""></audio></td>
-        </tr>     
-
-      <tr>
-            <td style="text-align: left" rowspan=4>Real-noise</td>
-      </tr>   
-
-      <tr>    
-            <td style="text-align: center" > - </td>
-          <td style="text-align: left"><audio src="samples/trainingset/denoised/sing320131205_4327781Mi3_12.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/noisy/sing320131205_4327781Mi3_12.wav" controls="" preload=""></audio></td>
-      </tr>  
-      
-      <tr>    
-            <td style="text-align: center" > - </td>
-          <td style="text-align: left"><audio src="samples/trainingset/denoised/sing320131205_4327781Mi3_14.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/noisy/sing320131205_4327781Mi3_14.wav" controls="" preload=""></audio></td>
-      </tr>    
-      
-      <tr>    
-            <td style="text-align: center" > - </td>
-          <td style="text-align: left"><audio src="samples/trainingset/denoised/sing320131205_4327781Mi3_26.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="samples/trainingset/noisy/sing320131205_4327781Mi3_26.wav" controls="" preload=""></audio></td>
-      </tr>         
-
-       
-
-
-      </tbody>
-</table>
-
-
-<h2>4. Samples of noisy target speakers from VCTK-noise<a name="vctk_noise"></a></h2>
-<!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
-<table>
-  <thead>
-    <tr>
-	  <th style="text-align: center"><strong>Source</strong></th>
-	  <th style="text-align: center"><strong>Target</strong></th>
-      <th style="text-align: center"><strong>Topline</strong></th>
-      <th style="text-align: center"><strong>Baseline</strong></th>
-      <th style="text-align: center"><strong>Proposed</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: He seems to have everything.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/vctk/p238_093_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/vctk/p238_093_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/topline/vctk/p238_093_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/vctk/p238_093_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/vctk/p238_093_p363.wav" controls="" preload=""></audio></td>
-	</tr>
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: But it may take some time to confirm the findings.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/vctk/p248_038_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/vctk/p248_038_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/topline/vctk/p248_038_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/vctk/p248_038_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/vctk/p248_038_p360.wav" controls="" preload=""></audio></td>
-	</tr>
-
-      <tr>
-            <td style="text-align: left" colspan=5>Source text: You must always attempt to raise the bar.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/vctk/p239_050_p374.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/vctk/p239_050_p374.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/topline/vctk/p239_050_p374.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/vctk/p239_050_p374.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/vctk/p239_050_p374.wav" controls="" preload=""></audio></td>
-	</tr>
-          
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: That can cost him a fortune.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/vctk/p239_036_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/vctk/p239_036_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/topline/vctk/p239_036_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/vctk/p239_036_p363.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/vctk/p239_036_p363.wav" controls="" preload=""></audio></td>
-	</tr>
-
-
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: Scotland had great assets.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/vctk/p248_065_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/vctk/p248_065_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/topline/vctk/p248_065_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/vctk/p248_065_p360.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/vctk/p248_065_p360.wav" controls="" preload=""></audio></td>
-	</tr>
-  </tbody>
-</table>
-
-<!-- <p><b>Short summary:</b> When the target neutral speaker is male, the FS2-baseline and FS2-denoisedVC cannot produce correct timbre, although the genereted speech is emotional. Besides, FS2-BN sometimes also cannot generate male voice. The proposed model could successfully maintain the target timbre when generating emotional speech.</p> -->
-
-<h2>5. Samples of the noisy target speaker from Real-noise (a noisy speaker from the Internet)<a name="real_noise"></a></h2>
-<!-- <h3>Convert the emotion expresssions from the source speaker to the neutral target speakers without emotional training data.</h3> -->
-<table>
-  <thead>
-    <tr>
-	  <th style="text-align: center"><strong>Source</strong></th>
-	  <th style="text-align: center"><strong>Target</strong></th>
-      <th style="text-align: center"><strong>Baseline</strong></th>
-      <th style="text-align: center"><strong>Proposed</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-
-      <tr>
-            <td style="text-align: left" colspan=5>Source text: I'd just like to play.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/real/0000000010.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/real/0000000010.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/real/0000000010.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/real/0000000010.wav" controls="" preload=""></audio></td>
-	</tr>
-
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: Painful, but only because it's true.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/real/0000000008.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/real/0000000008.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/real/0000000008.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/real/0000000008.wav" controls="" preload=""></audio></td>
-	</tr>
-
-      
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: This represents a tough game for us.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/real/0000000003.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/real/0000000003.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/real/0000000003.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/real/0000000003.wav" controls="" preload=""></audio></td>
-	</tr>
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: To the Hebrews it was a token that there would be no more universal floods.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/real/0000000012.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/real/0000000012.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/real/0000000012.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/real/0000000012.wav" controls="" preload=""></audio></td>
-	</tr>
-
-	<tr>
-            <td style="text-align: left" colspan=5>Source text: Overall it has been deeply frustrating and disappointing.</td>
-      </tr>        
-	<tr>
-	      <td style="text-align: left"><audio src="samples/source/real/0000000014.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/target/real/0000000014.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/baseline/real/0000000014.wav" controls="" preload=""></audio></td>
-            <td style="text-align: left"><audio src="samples/denoisedVC/real/0000000014.wav" controls="" preload=""></audio></td>
-	</tr>
-  </tbody>
-</table>
-<!-- <p><b>Short summary:</b> Given different speaker and emotion embedding during inference, the Speaker-mel gererator could provide emotionless speech with specific timbre, while the output of the Emotion-mel gererator contains the emotion variations with random or averaged timbre. Based on the two outputs, the final generated speech has specifec emotion expressions and timbre.</p> -->
-
-
-<h2 id="summary">6. Summary<a name="summary"></a></h2>
-<p> Building a voice conversion system for noisy target speakers, such as users providing noisy samples or Internet found data, is a challenging task since the use of contaminated speech in model training will apparently degrade the conversion performance. In this paper, we leverage the advances of our recently proposed Glow-WaveGAN and propose a noise-independent speech representation learning approach for high-quality voice conversion for noisy target speakers. Specifically, we learn a latent feature space where we ensure that the target distribution modeled by the conversion model is exactly from the modeled distribution of the waveform generator. With this premise, we further manage to make the latent feature to be noise-invariant. Specifically, we introduce a noise-controllable WaveGAN, which directly learns the noise-independent acoustic representation from waveform by the encoder and conducts noise control in the hidden space through a FiLM module in the decoder. As for the conversion model, importantly, we use a flow-based model to learn the distribution of noise-independent but speaker-related latent features from phoneme posteriorgrams. Experimental results demonstrate that the proposed model achieves high speech quality and speaker similarity in the voice conversion for noisy target speakers.
- </p>
-
-
-<h2 id="refs">7. References<a name="refs"></a></h2>
-<a name="ref1"></a>
-  <a href="https://arxiv.org/abs/2106.10831">[1] Cong, Jian, Shan Yang, Lei Xie and Dan Su. “Glow-WaveGAN: Learning Speech Representations from GAN-based Variational Auto-Encoder For High Fidelity Flow-based Speech Synthesis.” Interspeech (2021).
-  </a>
-<a name="ref2"></a>
-  <a href="https://arxiv.org/abs/2106.10831">[2] E. Perez, F. Strub, H. De Vries, V. Dumoulin, and A. Courville, “FiLM: Visual reasoning with a general conditioning layer,” in AAAI, vol. 32, no. 1, 2018
-</a>
-
-  <br>
-  <hr>
-  <br>
-      <!-- <footer class="site-footer">
-        <span class="site-footer-credits">This page was generated by .</span>
-      </footer> -->
+        <h2 id="refs">4. Citation</h2>
+        <p>If you utilize this repository or dataset, please consider citing our paper:</p>
+        <pre>
+        @INPROCEEDINGS{mcfend,
+              title={MCFEND: A Multi-source Benchmark Dataset for Chinese Fake News Detection},
+              author={Li, Yupeng and He, Haorui and Bai, Jin and Wen, Dacheng},
+              booktitle={Proc.~of WWW (to appear)},
+              year={2024},
+        }
+        </pre>
+        <br>
     </section>
-</body></html>
-
+</body>
+</html>
